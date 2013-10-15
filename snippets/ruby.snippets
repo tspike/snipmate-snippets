@@ -77,12 +77,12 @@ snippet until
 		${2}
 	end
 snippet cla class .. end
-	class ${1:`substitute(Filename(), '\v(^|_)(\a)', '\u\2', 'g')`}
+	class ${1:`substitute(Filename(), '\v(^|_)(\a)', '\u\2', 'g')`} ${2}
 		${3}
 	end
 snippet mod module .. end
-	module ${1:`substitute(Filename(), '^.', '\u&', '')`}
-		${2}
+	module ${1:`substitute(Filename(), '\v(^|_)(\a)', '\u\2', 'g')`} ${2}
+		${3}
 	end
 # attr_reader
 snippet r
@@ -509,6 +509,11 @@ snippet aft
 		${2}
 	end
 
+#test::unit
+snippet test
+	test "${1:test_name}" do
+		${2}
+	end
 #debugging
 snippet debug
 	require 'ruby-debug'; debugger;
