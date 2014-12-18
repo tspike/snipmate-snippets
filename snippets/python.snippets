@@ -31,6 +31,10 @@ snippet cl
 			${5:super($1, self).__init__()}
 			self.$4 = $4
 			${6}
+# New Class (2)
+snippet cla
+	class ${1:ClassName}(${2:object}):
+		${3}
 # New Function
 snippet def
 	def ${1:fname}(${2:`indent('.') ? 'self' : ''`}):
@@ -115,6 +119,9 @@ snippet _
 # python debugger (pdb)
 snippet pdb
 	import pdb; pdb.set_trace()
+# python remote debugger (rpdb)
+snippet rpdb
+	import rpdb; rpdb.Rpdb().set_trace()
 # ipython debugger (ipdb)
 snippet ipdb
 	import ipdb; ipdb.set_trace()
@@ -139,3 +146,6 @@ snippet testcase
 			${3:pass}
 snippet fut
 	from __future__ import ${1}
+snippet pry
+	import pdb
+	pdb.set_trace()

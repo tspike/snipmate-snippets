@@ -133,4 +133,9 @@ snippet urlizetrunc
 	urlizetrunc:${1}
 snippet wordwrap
 	wordwrap:${1}
-
+snippet macro
+	{% macro ${1}(${2}) -%}
+	${3}
+	{%- endmacro %}
+snippet tit
+	title="{{ messages.${1}() }}"
